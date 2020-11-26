@@ -1,0 +1,395 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+  background-color: lightgrey;
+}
+.container {
+  background-color: white;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "hero hero hero hero hero shop shop shop shop"
+    "dark dark dark about about about light light light";
+  width: 90%;
+  height: 100vh;
+  margin: 3rem auto;
+}
+
+.hero {
+  background-image: url("../images/desktop-image-hero-1.jpg");
+  position: relative;
+  background-size: cover;
+  display: flex;
+  grid-area: hero;
+  width: 100%;
+  height: 65vh;
+}
+.mobile-container {
+  position: absolute;
+  padding: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.logo {
+  color: white;
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+}
+.menu li {
+  list-style-type: none;
+  padding-top: 6px;
+}
+
+.menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 2vw;
+  font-size: 17px;
+}
+.menu li a:hover {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffffff;
+}
+
+.mobile-container .menu {
+  clear: none;
+  float: right;
+  max-height: none;
+}
+.mobile-container .menu-btn {
+  display: none;
+}
+
+.shop {
+  grid-area: shop;
+  height: 65vh;
+  padding: 4.5rem;
+}
+.about {
+  grid-area: about;
+  height: 35vh;
+  padding: 3rem;
+}
+
+.dark {
+  grid-area: dark;
+  height: 35vh;
+  width: 100%;
+}
+.light {
+  display: flex;
+  justify-content: center;
+  background-image: url("../images/image-about-light.jpg");
+  background-size: cover;
+  grid-area: light;
+  height: 35vh;
+  width: 100%;
+}
+h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+p {
+  line-height: 1.4rem;
+  color: hsl(0, 0%, 63%);
+}
+h4 {
+  letter-spacing: 4px;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.btn {
+  letter-spacing: 10px;
+  border: none;
+  background-color: white;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  color: black;
+}
+.btn:hover,
+.arrow:hover {
+  cursor: pointer;
+}
+.slider {
+  grid-area: shop;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  background-color: hsl(0, 0%, 0%);
+  width: 10rem;
+  height: 5rem;
+}
+
+.arrow-left {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+}
+.arrow-left:hover,
+.arrow-right:hover {
+  background-color: hsl(0, 0%, 27%);
+  cursor: pointer;
+}
+.arrow-right {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+}
+
+.attribution {
+  grid-area: light;
+  align-self: end;
+  padding: 1rem 1rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .shop {
+    padding: 2.5rem;
+  }
+  .about {
+    padding: 1.7rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  p {
+    line-height: 1.2rem;
+  }
+  h4 {
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding-bottom: 0.6rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .shop {
+    padding: 1.5rem;
+  }
+  .about {
+    padding: 1.2rem;
+  }
+  h1 {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+  p {
+    line-height: 1.1rem;
+  }
+  h4 {
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    width: 100%;
+  }
+  .container {
+    margin-top: 0;
+    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-areas:
+      "hero"
+      "shop"
+      "dark"
+      "about"
+      "light";
+    overflow: hidden;
+    height: 250vh;
+  }
+  .mobile-container {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+  /* header */
+
+  .header {
+    width: 100%;
+    z-index: 3;
+  }
+
+  .header ul {
+    background-color: white;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  .header li a {
+    display: block;
+    width: 18vw;
+    color: #414141;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  .header li a:hover {
+    font-weight: 700;
+  }
+
+  .header .menu-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* menu */
+
+  .header .menu {
+    display: flex;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /* menu icon */
+
+  .header .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 35px 20px;
+    position: relative;
+    user-select: none;
+    z-index: 100;
+  }
+
+  .header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  /* menu btn */
+
+  .header .menu-btn {
+    display: none;
+  }
+
+  .header .menu-btn:checked ~ .menu {
+    max-height: 340px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+    background-color: #414141;
+  }
+
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 45%;
+  }
+
+  .slider {
+    display: none;
+  }
+
+  .hero {
+    grid-area: hero;
+    width: 100%;
+    height: 50vh;
+  }
+  .shop {
+    grid-area: shop;
+    padding: 2.5rem;
+    width: 100%;
+    height: 50vh;
+  }
+  .dark {
+    grid-area: dark;
+    width: 100%;
+    height: 50vh;
+  }
+  .about {
+    grid-area: about;
+    padding: 2rem;
+    width: 100%;
+    height: 50vh;
+  }
+  .light {
+    grid-area: light;
+    width: 100%;
+    height: 50vh;
+  }
+  h1 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.2rem;
+  }
+  h4 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    padding-bottom: 1rem;
+  }
+  .btn {
+    letter-spacing: 1px;
+    border: none;
+    background-color: white;
+    margin: 10px;
+    color: hsl(0, 0%, 63%);
+  }
+}
