@@ -10,12 +10,12 @@ Your challenge is to build out this e-commerce homepage and get it looking as cl
 
 ### Desktop version
 
-![A preview of the desktop design](screenshots/desktop1.png)
+![A preview of the desktop design](pictures/desktop1.png)
 
 ### Mobile version
 
-![A preview of the mobile design](screenshots/mobile1.png)
-![A preview of the mobile design](screenshots/mobile2.png)
+![A preview of the mobile design](pictures/mobile1.png)
+![A preview of the mobile design](pictures/mobile2.png)
 
 ## Challenge specification
 
